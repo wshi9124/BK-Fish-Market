@@ -16,3 +16,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.fishBackground {
+  background-image: url("../public/seafoodLogin.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

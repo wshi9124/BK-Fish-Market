@@ -8,7 +8,7 @@ function PurchaseHistory() {
     <div className="mb-6">
       <Logo />
       <NavBar />
-      <p>this is purchase history</p>
+      <h1 className="text-5xl mt-5 text-center">Purchase History</h1>
       <Footer />
     </div>
   );

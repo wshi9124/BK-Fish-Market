@@ -8,7 +8,7 @@ function Cart() {
     <div className="mb-6">
       <Logo />
       <NavBar />
-      <p>This is Cart</p>
+      <h1 className="text-5xl mt-5 text-center">Cart</h1>
       <Footer />
     </div>
   );
