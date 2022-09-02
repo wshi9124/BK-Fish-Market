@@ -18,7 +18,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_195109) do
     t.string "name"
     t.string "category"
     t.float "price"
-    t.string "weight"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

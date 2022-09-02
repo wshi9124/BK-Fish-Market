@@ -4,7 +4,6 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :category
       t.float :price
-      t.string :weight
       t.text :description
 
       t.timestamps
