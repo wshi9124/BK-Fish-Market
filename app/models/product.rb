@@ -3,3 +3,5 @@ class Product < ApplicationRecord
     validates :name, :category, :price, :description, presence: true
     validates :description, length: { minimum: 10 }
 end
+
+# , dependent: :destroy 
