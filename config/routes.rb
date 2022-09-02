@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :products
   resources :users, only:[:create]
 
   #To log in

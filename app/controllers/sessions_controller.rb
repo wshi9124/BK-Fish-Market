@@ -3,12 +3,12 @@ class SessionsController < ApplicationController
 
     #To Log In
     def create 
-        user = User.find_by(username: params[:username])
+        user = User.find_by(email: params[:email], account_type: params[:account_type])
         if user&.authenticate(params[:password])
             session[:user_id] = user.id
             render json: user
         else
-            render json: { error: "Invalid username or password" }, status: 401
+            render json: { error: "Invalid Email or password" }, status: 401
         end
     end
 

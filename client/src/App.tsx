@@ -6,7 +6,7 @@ import ProductPage from './pages/ProductsPage';
 import Cart from './pages/Cart';
 import PurchaseHistory from './pages/PurchaseHistory';
 import Login from './pages/Login';
-import CreateAccount from './pages/Login/CreateAccount';
+import CreateAccountPage from './pages/Login/CreateAccountPage';
 import Admin from './pages/Admin';
 
 function App() {
@@ -19,8 +19,9 @@ function App() {
       <Route path="/cart" element={<Cart />} />
       <Route path="/purchaseHistory" element={<PurchaseHistory />} />
       <Route path="/login" element={<Login />} />
-      <Route path="createAccount" element={<CreateAccount />} />
+      <Route path="createAccount" element={<CreateAccountPage />} />
       <Route path="/admin" element={<Admin />} />
+      <Route path="*" element={<HomePage />} />
     </Routes>
 
   );
