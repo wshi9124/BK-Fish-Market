@@ -52,10 +52,10 @@ function CreateAccountPage() {
   };
 
   return (
-    <div>
+    <div className="mb-10">
       <Logo />
       <div className="flex flex-col text-center justify-center items-center">
-        <h1 className="text-4xl mt-10">Create New Account</h1>
+        <h1 className="text-5xl mt-10">Create New Account</h1>
         <p className="text-center text-red-500 text-lg my-5">
           {errorMessages ? errorMessages.map((error) => (
             <span key={error}>

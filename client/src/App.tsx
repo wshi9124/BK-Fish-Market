@@ -8,6 +8,7 @@ import PurchaseHistory from './pages/PurchaseHistory';
 import Login from './pages/Login';
 import CreateAccountPage from './pages/Login/CreateAccountPage';
 import Admin from './pages/Admin';
+import AddFish from './pages/Admin/AddFish';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="createAccount" element={<CreateAccountPage />} />
       <Route path="/admin" element={<Admin />} />
+      <Route path="/addFish" element={<AddFish />} />
       <Route path="*" element={<HomePage />} />
     </Routes>
 
