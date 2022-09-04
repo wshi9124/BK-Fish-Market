@@ -5,3 +5,11 @@ export interface IUser {
   account_type?: string | undefined,
   id?: number | undefined,
 }
+
+export const EmptyUserValue = {
+  first_name: '',
+  last_name: '',
+  email: '',
+  account_type: '',
+  id: -1,
+} as IUser;

@@ -34,7 +34,11 @@ function Login() {
             .then((data) => {
               setErrorMessage('');
               setUser(data);
-              navigate('/home');
+              if (data.account_type === 'admin') {
+                navigate('/admin');
+              } else if (data.account_type === 'user') {
+                navigate('/home');
+              }
             });
         } else {
           res.json()

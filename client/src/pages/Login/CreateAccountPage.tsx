@@ -38,7 +38,11 @@ function CreateAccountPage() {
             .then((data) => {
               setErrorMessages('');
               setUser(data);
-              navigate('/home');
+              if (data.account_type === 'admin') {
+                navigate('/admin');
+              } else if (data.account_type === 'user') {
+                navigate('/home');
+              }
             });
         } else {
           res.json()

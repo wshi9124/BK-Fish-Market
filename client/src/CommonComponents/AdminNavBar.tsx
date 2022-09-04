@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import LogOutNavtab from './LogOutNavTab';
 
 function AdminNavBar() {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ function AdminNavBar() {
       <ul className="flex">
         <button type="button" onClick={() => navigate('/admin')} className="py-5 px-10 font-semibold hover:text-red-400 transition duration-300">Edit All Fish</button>
         <button type="button" onClick={() => navigate('/addFish')} className="py-5 px-10 font-semibold hover:text-red-400 transition duration-300">Add New Fish</button>
-        <button type="button" className="py-5 px-10 font-semibold hover:text-red-400 transition duration-300">Log out</button>
+        <LogOutNavtab />
       </ul>
     </div>
 
