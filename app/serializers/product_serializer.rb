@@ -6,5 +6,5 @@ class ProductSerializer < ActiveModel::Serializer
       Rails.application.routes.url_helpers.rails_blob_path(object.image, host: "local")
     end
   end
-
+  
 end

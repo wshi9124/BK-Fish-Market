@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from '../../CommonComponents/Logo';
 import AdminNavBar from '../../CommonComponents/AdminNavBar';
+import FishCard from './FishCards';
+import Footer from '../../CommonComponents/Footer';
+import { EmptyProductValue, IProduct } from '../../types/IProducts';
 
 function Admin() {
+  const [productData, setProductData] = useState<[IProduct]>([EmptyProductValue]);
+
+  useEffect(() => {
+    fetch('/products')
+      .then((res) => {
+        if (res.ok) {
+          res.json()
+            .then((data) => {
+              setProductData(data);
+              console.log(data);
+            });
+        }
+      });
+  }, []);
+
   return (
     <div>
       <Logo />
@@ -19,6 +37,8 @@ function Admin() {
           />
         </label>
       </div>
+      <FishCard productData={productData} setProductData={setProductData} />
+      <Footer />
     </div>
   );
 }

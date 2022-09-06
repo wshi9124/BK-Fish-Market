@@ -1,6 +1,8 @@
 import React from 'react';
 import Logo from '../../CommonComponents/Logo';
 import NavBar from '../../CommonComponents/Navbar';
+import ContactUs from './ContactUs';
+import GoogleMaps from './GoogleMaps';
 import Footer from '../../CommonComponents/Footer';
 
 function AboutUs() {
@@ -12,7 +14,7 @@ function AboutUs() {
       <div className="w-1/2 mx-auto text-2xl mt-5">
         Located between Kosciuszko street and Broadway, B & K Fish Mini Market has been serving the local community for over 10 years. B & K provides customers with a seafood experience like no other.
       </div>
-      <div className="w-1/2 mx-auto text-2xl">
+      <div className="w-1/2 mx-auto text-2xl mb-5">
         With daily shipments and affordable prices, customers can choose to bring home raw seafood or let one of our skilled chefs prepare steamed and fried seafoods. Starting last summer, customers can also order online through Uber Eats, GrubHub, or DoorDash
       </div>
       <div className="flex justify-center">
@@ -40,6 +42,10 @@ function AboutUs() {
         >
           <img src="/grubhub.jpeg" alt="grubhub logo" />
         </a>
+      </div>
+      <div className="flex">
+        <ContactUs />
+        <GoogleMaps />
       </div>
       <div />
       <Footer />
