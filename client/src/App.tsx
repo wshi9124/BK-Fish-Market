@@ -22,7 +22,6 @@ function App() {
         if (res.ok) {
           res.json()
             .then((data) => {
-              console.log(data);
               setUser(data);
               if (data.account_type === 'admin') {
                 navigate('/admin');

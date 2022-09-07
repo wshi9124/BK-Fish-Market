@@ -1,5 +1,7 @@
+/* eslint-disable  @typescript-eslint/no-non-null-assertion */
 import React from 'react';
 import { IProduct } from '../../types/IProducts';
+import currencyFormat from '../../libs/Util';
 
 interface Props {
   productData:[IProduct]
@@ -7,19 +9,93 @@ interface Props {
   search:string
 }
 function FishCard({ productData, setProductData, search }: Props) {
-  // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
-  const filteredProducts = productData.filter((item) => item.name!.toLowerCase().includes(search.toLowerCase()));
+  const filteredProducts = productData.filter((item) => item.name!.toLowerCase().includes(search.toLowerCase())).reverse();
 
   const renderProducts = filteredProducts.map((product) => (
-    <div className="w-full h-96 overflow-auto rounded shadow-lg" key={product.id}>
-      <img className="w-full h-64 border-b " src={product.image_url ? product.image_url : './productCard.jpeg'} alt={product.name} />
+    <div className="w-full overflow-auto rounded shadow-lg" key={product.id} style={{ height: '450px' }}>
+      <img
+        className="w-full h-72 border-b "
+        src={product.image_url ? product.image_url : './productCard.jpeg'}
+        alt={product.name}
+      />
       <div className="px-6 py-4">
         <div className="font-bold text-2xl mb-2">{product.name}</div>
-        <div className="text-xl mb-2 overflow-auto">{product.category}</div>
+        <div className="text-xl mb-2">
+          <strong>{currencyFormat(product.price!)}</strong>
+          {' '}
+          -
+          {' '}
+          {product.category}
+
+        </div>
         <div>{product.description}</div>
       </div>
     </div>
   ));
+
+  const handleAllProducts = () => {
+    fetch('/products')
+      .then((res) => {
+        if (res.ok) {
+          res.json()
+            .then((data) => {
+              setProductData(data);
+            });
+        }
+      });
+  };
+
+  const handleSteakOrFillet = () => {
+    fetch('/products')
+      .then((res) => {
+        if (res.ok) {
+          res.json()
+            .then((data) => {
+              const allSteaks = data.filter((item:IProduct) => item.category === 'Steak or fillet');
+              setProductData(allSteaks);
+            });
+        }
+      });
+  };
+
+  const handleWholeFish = () => {
+    fetch('/products')
+      .then((res) => {
+        if (res.ok) {
+          res.json()
+            .then((data) => {
+              const allWholeFish = data.filter((item:IProduct) => item.category === 'Whole fish');
+              setProductData(allWholeFish);
+            });
+        }
+      });
+  };
+
+  const handleShellfish = () => {
+    fetch('/products')
+      .then((res) => {
+        if (res.ok) {
+          res.json()
+            .then((data) => {
+              const allShellfish = data.filter((item:IProduct) => item.category === 'Shellfish');
+              setProductData(allShellfish);
+            });
+        }
+      });
+  };
+
+  const handleOther = () => {
+    fetch('/products')
+      .then((res) => {
+        if (res.ok) {
+          res.json()
+            .then((data) => {
+              const allOther = data.filter((item:IProduct) => item.category === 'Other');
+              setProductData(allOther);
+            });
+        }
+      });
+  };
 
   return (
     <div className="mt-10">
@@ -29,6 +105,7 @@ function FishCard({ productData, setProductData, search }: Props) {
           <button
             className="py-3 hover:text-red-400 border"
             type="button"
+            onClick={handleAllProducts}
           >
             All Products
 
@@ -36,6 +113,7 @@ function FishCard({ productData, setProductData, search }: Props) {
           <button
             className="py-5 hover:text-red-400 border"
             type="button"
+            onClick={handleSteakOrFillet}
           >
             Steak or Fillet
 
@@ -43,6 +121,7 @@ function FishCard({ productData, setProductData, search }: Props) {
           <button
             className="py-5 hover:text-red-400 border"
             type="button"
+            onClick={handleWholeFish}
           >
             Whole Fish
 
@@ -50,6 +129,7 @@ function FishCard({ productData, setProductData, search }: Props) {
           <button
             className="py-5  hover:text-red-400 border"
             type="button"
+            onClick={handleShellfish}
           >
             Shellfish
 
@@ -57,6 +137,7 @@ function FishCard({ productData, setProductData, search }: Props) {
           <button
             className="py-5 rounded-b-lg hover:text-red-400 border"
             type="button"
+            onClick={handleOther}
           >
             Other
 
