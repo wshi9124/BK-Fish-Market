@@ -15,7 +15,7 @@ function ProductPageFishCard({ productData, setProductData, search }: Props) {
   const renderProducts = filteredProducts.map((product) => (
     <div className="w-full overflow-auto rounded shadow-lg" key={product.id} style={{ height: '450px' }}>
       <img
-        className="w-full h-72 border-b "
+        className="w-full h-80 border-b "
         src={product.image_url ? product.image_url : './productCard.jpeg'}
         alt={product.name}
       />
