@@ -4,6 +4,7 @@ import AuthContext from './AuthProvider';
 import HomePage from './pages/HomePage';
 import AboutUs from './pages/AboutUs';
 import ProductPage from './pages/ProductsPage';
+import IndividualProductPage from './pages/IndividualProductPage';
 import Cart from './pages/Cart';
 import PurchaseHistory from './pages/PurchaseHistory';
 import Login from './pages/Login';
@@ -39,6 +40,7 @@ function App() {
       <Route path="/home" element={<HomePage />} />
       <Route path="/about" element={<AboutUs />} />
       <Route path="/products" element={<ProductPage />} />
+      <Route path="/individualProduct" element={<IndividualProductPage />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/purchaseHistory" element={<PurchaseHistory />} />
       <Route path="/login" element={<Login />} />
