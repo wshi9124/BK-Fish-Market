@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :products
+  resources :products, except: [:destroy]
   resources :users, only:[:create]
-
+  
   #To log in
   post "/login", to: "sessions#create" 
   #To stay logged in

@@ -21,12 +21,6 @@ class ProductsController < ApplicationController
         render json: product, status: 202
     end
 
-    def destroy
-        product= find_product
-        product.destroy
-        render json: {}, status: :accepted
-    end
-
     private
 
     def find_product

@@ -14,7 +14,7 @@ function NavBar() {
         <button type="button" onClick={() => navigate('/about')} className="py-5 px-10 font-semibold hover:text-red-400 transition duration-300">About Us</button>
         <button type="button" onClick={() => navigate('/products')} className="py-5 px-10 font-semibold hover:text-red-400 transition duration-300">Products</button>
         <button type="button" onClick={() => navigate('/cart')} className="py-5 px-10 font-semibold hover:text-red-400 transition duration-300">Cart</button>
-        <button type="button" onClick={() => navigate('/purchaseHistory')} className="py-5 px-10 font-semibold hover:text-red-400 transition duration-300">Purchase History</button>
+        {user.account_type === 'user' ? <button type="button" onClick={() => navigate('/purchaseHistory')} className="py-5 px-10 font-semibold hover:text-red-400 transition duration-300">Purchase History</button> : <div />}
         {user.account_type === 'user' ? <LogOutNavtab />
           : <button type="button" onClick={() => navigate('/login')} className="py-5 px-10 font-semibold hover:text-red-400 transition duration-300">Log In</button>}
       </ul>

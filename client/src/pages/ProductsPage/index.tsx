@@ -15,7 +15,6 @@ function ProductPage() {
         if (res.ok) {
           res.json()
             .then((data) => {
-              console.log(data);
               setProductData(data);
             });
         }
