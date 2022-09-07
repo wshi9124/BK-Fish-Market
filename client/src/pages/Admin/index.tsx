@@ -7,6 +7,7 @@ import { EmptyProductValue, IProduct } from '../../types/IProducts';
 
 function Admin() {
   const [productData, setProductData] = useState<[IProduct]>([EmptyProductValue]);
+  const [search, setSearch] = useState<string>('');
 
   useEffect(() => {
     fetch('/products')
@@ -15,7 +16,6 @@ function Admin() {
           res.json()
             .then((data) => {
               setProductData(data);
-              console.log(data);
             });
         }
       });
@@ -34,10 +34,12 @@ function Admin() {
             type="text"
             name="searchbar"
             placeholder="Search by Name"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
         </label>
       </div>
-      <FishCard productData={productData} setProductData={setProductData} />
+      <FishCard productData={productData} setProductData={setProductData} search={search} />
       <Footer />
     </div>
   );
