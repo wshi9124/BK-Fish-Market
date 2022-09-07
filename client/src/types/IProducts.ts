@@ -4,7 +4,8 @@ export interface IProduct {
   price?: number | undefined,
   description?: string | undefined,
   id?: number | undefined,
-  image_url: string | undefined
+  image_url?: string | undefined,
+  active?: boolean | undefined
 }
 
 export const EmptyProductValue = {
@@ -14,4 +15,5 @@ export const EmptyProductValue = {
   description: '',
   id: -1,
   image_url: '',
+  active: true,
 } as IProduct;

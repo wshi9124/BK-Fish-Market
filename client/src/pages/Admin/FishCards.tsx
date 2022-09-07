@@ -38,7 +38,7 @@ function FishCard({ productData, setProductData, search }: Props) {
     <div className="mt-10">
       <div className="flex">
         <AdminCategorySidebar setProductData={setProductData} />
-        <div className="grid lg:grid-cols-4 sm:grid-cols-2 w-4/5 gap-5 mb-10 mr-10">
+        <div className="grid lg:grid-cols-4 sm:grid-cols-2 w-4/5 gap-6 mb-10 mr-10">
           {renderProducts}
         </div>
       </div>

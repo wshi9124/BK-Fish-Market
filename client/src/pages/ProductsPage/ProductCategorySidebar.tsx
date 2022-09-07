@@ -12,7 +12,8 @@ function ProductCategorySidebar({ setProductData }:Props) {
         if (res.ok) {
           res.json()
             .then((data) => {
-              setProductData(data);
+              const allProducts = data.filter((item:IProduct) => item.active === true);
+              setProductData(allProducts);
             });
         }
       });
@@ -24,7 +25,7 @@ function ProductCategorySidebar({ setProductData }:Props) {
         if (res.ok) {
           res.json()
             .then((data) => {
-              const allSteaks = data.filter((item:IProduct) => item.category === 'Steak or fillet');
+              const allSteaks = data.filter((item:IProduct) => item.active === true && item.category === 'Steak or fillet');
               setProductData(allSteaks);
             });
         }
@@ -37,7 +38,7 @@ function ProductCategorySidebar({ setProductData }:Props) {
         if (res.ok) {
           res.json()
             .then((data) => {
-              const allWholeFish = data.filter((item:IProduct) => item.category === 'Whole fish');
+              const allWholeFish = data.filter((item:IProduct) => item.active === true && item.category === 'Whole fish');
               setProductData(allWholeFish);
             });
         }
@@ -50,7 +51,7 @@ function ProductCategorySidebar({ setProductData }:Props) {
         if (res.ok) {
           res.json()
             .then((data) => {
-              const allShellfish = data.filter((item:IProduct) => item.category === 'Shellfish');
+              const allShellfish = data.filter((item:IProduct) => item.active === true && item.category === 'Shellfish');
               setProductData(allShellfish);
             });
         }
@@ -63,7 +64,7 @@ function ProductCategorySidebar({ setProductData }:Props) {
         if (res.ok) {
           res.json()
             .then((data) => {
-              const allOther = data.filter((item:IProduct) => item.category === 'Other');
+              const allOther = data.filter((item:IProduct) => item.active === true && item.category === 'Other');
               setProductData(allOther);
             });
         }

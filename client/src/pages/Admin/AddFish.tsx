@@ -12,6 +12,7 @@ function AddFish() {
   const [description, setDescription] = useState<string>('');
   const [image, setImage] = useState<File | null>(null);
   const [errorMessages, setErrorMessages] = useState<[] | ''>([]);
+  const activeStatus = 'true';
 
   const handleCreateNewProduct = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ function AddFish() {
     formData.append('category', category);
     formData.append('price', price);
     formData.append('description', description);
+    formData.append('active', activeStatus);
 
     fetch('/products', {
       method: 'POST',

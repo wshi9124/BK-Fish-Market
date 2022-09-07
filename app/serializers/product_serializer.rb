@@ -1,5 +1,5 @@
 class ProductSerializer < ActiveModel::Serializer
-  attributes :id, :name, :category, :price, :description, :image_url
+  attributes :id, :name, :category, :price, :description, :active, :image_url
 
   def image_url
     if object.image.attached?
