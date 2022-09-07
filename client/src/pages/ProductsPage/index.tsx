@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from '../../CommonComponents/Logo';
 import NavBar from '../../CommonComponents/Navbar';
+import ProductPageFishCard from './ProductPageFishCard';
 import Footer from '../../CommonComponents/Footer';
+import { EmptyProductValue, IProduct } from '../../types/IProducts';
 
 function ProductPage() {
+  const [productData, setProductData] = useState<[IProduct]>([EmptyProductValue]);
+  const [search, setSearch] = useState<string>('');
+
+  useEffect(() => {
+    fetch('/products')
+      .then((res) => {
+        if (res.ok) {
+          res.json()
+            .then((data) => {
+              console.log(data);
+              setProductData(data);
+            });
+        }
+      });
+  }, []);
+
   return (
     <div className="mb-6">
       <Logo />
@@ -17,9 +35,12 @@ function ProductPage() {
             type="text"
             name="searchbar"
             placeholder="Search by Name"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
         </label>
       </div>
+      <ProductPageFishCard productData={productData} setProductData={setProductData} search={search} />
       <Footer />
     </div>
   );
