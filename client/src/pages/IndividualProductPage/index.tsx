@@ -1,56 +1,116 @@
 /* eslint-disable  @typescript-eslint/no-non-null-assertion */
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../../AuthProvider';
 import Logo from '../../CommonComponents/Logo';
 import NavBar from '../../CommonComponents/Navbar';
+import ProductReview from './ProductReview';
 import Footer from '../../CommonComponents/Footer';
 import currencyFormat from '../../libs/Util';
 
 function IndividualProductPage() {
   const navigate = useNavigate();
-  const { productItem } = useContext(AuthContext);
+  const { productItem, setProductItem } = useContext(AuthContext);
+  const [addToCartNumber, setAddToCartNumber] = useState<number>(1);
 
   useEffect(() => {
-    if (productItem.id === -1) {
+    if (productItem.name === '') {
       navigate('/products');
     }
   }, []);
+
+  const handleMinusButton = () => {
+    if (addToCartNumber > 1) {
+      setAddToCartNumber(addToCartNumber - 1);
+    }
+  };
+
+  const handlePlusButton = () => {
+    if (addToCartNumber < 10) {
+      setAddToCartNumber(addToCartNumber + 1);
+    }
+  };
+
+  const handleBackButton = () => {
+    setProductItem({});
+    navigate('/products');
+  };
 
   return (
     <div className="mb-6">
       <Logo />
       <NavBar />
-      <div className="flex mt-20 px-20 mx-10">
-        <div className=" flex justify-center w-1/2">
+      <div className="flex mt-10 px-20 mx-10">
+        <div className=" flex flex-col items-center w-1/2">
           <img
-            className="border w-full"
-            style={{ width: '670px', height: '600px' }}
+            className="border"
+            style={{ width: '640px', height: '580px' }}
             src={productItem.image_url ? productItem.image_url : './productCard.jpeg'}
             alt={productItem.name}
           />
+          <p
+            className="text-2xl px-5 mt-1"
+            style={{ width: '640px' }}
+          >
+            {productItem.description}
+          </p>
         </div>
-        <div className="w-1/2 text-center">
-          <p className="text-5xl">{productItem.name}</p>
-          <p className="text-2xl">
-            Category-
+        <div className="w-1/2 text-center mt-20">
+          <p
+            className="text-5xl"
+          >
+            {productItem.name}
+            <strong>
+              <mark className="text-red-500 bg-white">
+                {productItem.active === false ? ' - Out Of Stock' : ''}
+              </mark>
+            </strong>
+          </p>
+          <p className="text-2xl mt-5">Average Stars Place holder</p>
+          <p className="text-2xl mt-5">
             {' '}
             {productItem.category}
           </p>
-          <p className="text-2xl">Average Stars Place holder</p>
-          <p className="text-2xl">{currencyFormat(productItem.price!)}</p>
-          <p className="text-2xl">{productItem.description}</p>
+          <p className="text-4xl mt-5">{currencyFormat(productItem.price!)}</p>
+          <div className="flex justify-center mt-5">
+            <button
+              type="button"
+              className="text-4xl px-3 py-1 border rounded-full bg-zinc-100 hover:bg-zinc-200"
+              onClick={handlePlusButton}
+            >
+              +
+            </button>
+            <p
+              className="text-4xl px-3 py-1"
+            >
+              {addToCartNumber}
+            </p>
+            <button
+              type="button"
+              className="text-4xl px-4 py-1 border rounded-full bg-zinc-100 hover:bg-zinc-200"
+              onClick={handleMinusButton}
+            >
+              -
+            </button>
+            <button
+              type="button"
+              className="bg-slate-900 text-white py-2 px-3 ml-3 rounded-md hover:bg-slate-800 text-xl"
+            >
+              Add to Cart
+
+            </button>
+          </div>
           <button
             type="button"
-            onClick={() => navigate('/products')}
-            className="bg-slate-900 text-white mt-6 py-3 px-6 rounded-md hover:bg-slate-800 w-1/4 text-xl"
+            onClick={handleBackButton}
+            className="bg-slate-900 text-white mt-10 py-3 px-6 rounded-md hover:bg-slate-800 w-60 text-xl"
           >
-            Back
+            Back to all products
 
           </button>
         </div>
       </div>
-      <p className="text-center text-5xl mt-10">Reviews</p>
+      <ProductReview />
       <Footer />
     </div>
   );

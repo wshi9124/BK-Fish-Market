@@ -4,11 +4,12 @@ import AuthContext from '../AuthProvider';
 
 function LogOutNavtab() {
   const navigate = useNavigate();
-  const { setUser, user } = useContext(AuthContext);
+  const { setUser, user, setProductItem } = useContext(AuthContext);
 
   const handleLogout = () => {
     fetch('/logout', { method: 'DELETE' });
     setUser({});
+    setProductItem({});
     navigate('/login');
   };
 

@@ -8,8 +8,8 @@ import ProductCategorySidebar from './ProductCategorySidebar';
 import currencyFormat from '../../libs/Util';
 
 interface Props {
-  productData:[IProduct]
-  setProductData:React.Dispatch<React.SetStateAction<[IProduct]>>
+  productData:IProduct[]
+  setProductData:React.Dispatch<React.SetStateAction<IProduct[]>>
   search:string
 }
 function ProductPageFishCard({ productData, setProductData, search }: Props) {

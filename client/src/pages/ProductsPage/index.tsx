@@ -6,7 +6,7 @@ import Footer from '../../CommonComponents/Footer';
 import { EmptyProductValue, IProduct } from '../../types/IProducts';
 
 function ProductPage() {
-  const [productData, setProductData] = useState<[IProduct]>([EmptyProductValue]);
+  const [productData, setProductData] = useState<IProduct[]>([EmptyProductValue]);
   const [search, setSearch] = useState<string>('');
 
   useEffect(() => {

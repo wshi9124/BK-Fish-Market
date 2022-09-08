@@ -2,7 +2,7 @@ import React from 'react';
 import { IProduct } from '../../types/IProducts';
 
 interface Props {
-  setProductData:React.Dispatch<React.SetStateAction<[IProduct]>>
+  setProductData:React.Dispatch<React.SetStateAction<IProduct[]>>
 }
 
 function ProductCategorySidebar({ setProductData }:Props) {

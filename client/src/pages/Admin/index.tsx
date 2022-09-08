@@ -6,7 +6,7 @@ import Footer from '../../CommonComponents/Footer';
 import { EmptyProductValue, IProduct } from '../../types/IProducts';
 
 function Admin() {
-  const [productData, setProductData] = useState<[IProduct]>([EmptyProductValue]);
+  const [productData, setProductData] = useState<IProduct[]>([EmptyProductValue]);
   const [search, setSearch] = useState<string>('');
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function Admin() {
   }, []);
 
   return (
-    <div>
+    <div className="mb-6">
       <Logo />
       <AdminNavBar />
       <h1 className="text-5xl mt-5 text-center">See All Products to Edit</h1>

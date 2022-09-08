@@ -2,7 +2,7 @@ import React from 'react';
 import { IProduct } from '../../types/IProducts';
 
 interface Props {
-  setProductData:React.Dispatch<React.SetStateAction<[IProduct]>>
+  setProductData:React.Dispatch<React.SetStateAction<IProduct[]>>
 }
 
 function AdminCategorySidebar({ setProductData }:Props) {
@@ -120,7 +120,7 @@ function AdminCategorySidebar({ setProductData }:Props) {
 
       </button>
       <button
-        className="py-5 rounded-b-lg hover:text-red-400 border"
+        className="py-5 hover:text-red-400 border"
         type="button"
         onClick={handleOther}
       >
