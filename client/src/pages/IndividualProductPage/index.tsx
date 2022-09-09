@@ -73,32 +73,34 @@ function IndividualProductPage() {
           </p>
           <p className="text-4xl mt-5">{currencyFormat(productItem.price!)}</p>
           <div className="flex justify-center mt-5">
-            <button
-              type="button"
-              className="text-4xl px-3 py-1 border rounded-full bg-zinc-100 hover:bg-zinc-200"
-              onClick={handlePlusButton}
-            >
-              +
-            </button>
-            <p
-              className="text-4xl px-3 py-1"
-            >
-              {addToCartNumber}
-            </p>
-            <button
-              type="button"
-              className="text-4xl px-4 py-1 border rounded-full bg-zinc-100 hover:bg-zinc-200"
-              onClick={handleMinusButton}
-            >
-              -
-            </button>
-            <button
-              type="button"
-              className="bg-slate-900 text-white py-2 px-3 ml-3 rounded-md hover:bg-slate-800 text-xl"
-            >
-              Add to Cart
+            {productItem.active === true ? (
+              <button
+                type="button"
+                className="text-4xl px-3 py-1 border rounded-full bg-zinc-100 hover:bg-zinc-200"
+                onClick={handlePlusButton}
+              >
+                +
+              </button>
+            ) : ''}
+            {productItem.active === true ? <p className="text-4xl px-3 py-1">{addToCartNumber}</p> : null}
+            {productItem.active === true ? (
+              <button
+                type="button"
+                className="text-4xl px-4 py-1 border rounded-full bg-zinc-100 hover:bg-zinc-200"
+                onClick={handleMinusButton}
+              >
+                -
+              </button>
+            ) : ''}
+            {productItem.active === true ? (
+              <button
+                type="button"
+                className="bg-slate-900 text-white py-2 px-3 ml-3 rounded-md hover:bg-slate-800 text-xl"
+              >
+                Add to Cart
 
-            </button>
+              </button>
+            ) : ''}
           </div>
           <button
             type="button"

@@ -12,6 +12,8 @@ import CreateAccountPage from './pages/Login/CreateAccountPage';
 import Admin from './pages/Admin';
 import EditProductPage from './pages/EditProductPage';
 import AddFish from './pages/Admin/AddFish';
+import AdminPrivateRoutes from './utils/AdminPrivateRoute';
+import UserPrivateRoutes from './utils/UserPrivateroutes';
 
 function App() {
   const { setUser } = useContext(AuthContext);
@@ -43,12 +45,16 @@ function App() {
       <Route path="/products" element={<ProductPage />} />
       <Route path="/individualProduct" element={<IndividualProductPage />} />
       <Route path="/cart" element={<Cart />} />
-      <Route path="/purchaseHistory" element={<PurchaseHistory />} />
       <Route path="/login" element={<Login />} />
       <Route path="createAccount" element={<CreateAccountPage />} />
-      <Route path="/admin" element={<Admin />} />
-      <Route path="/editProduct" element={<EditProductPage />} />
-      <Route path="/addFish" element={<AddFish />} />
+      <Route element={<UserPrivateRoutes />}>
+        <Route path="/purchaseHistory" element={<PurchaseHistory />} />
+      </Route>
+      <Route element={<AdminPrivateRoutes />}>
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/editProduct" element={<EditProductPage />} />
+        <Route path="/addFish" element={<AddFish />} />
+      </Route>
       <Route path="*" element={<HomePage />} />
     </Routes>
   );
