@@ -52,3 +52,6 @@ end
 gem "active_model_serializers", "~> 0.10.13"
 
 gem 'email_validator'
+
+# load env variables so that it doesnt get pushed to github
+gem 'dotenv-rails', groups: [:development, :test]
