@@ -7,10 +7,13 @@ import NavBar from '../../CommonComponents/Navbar';
 import ProductReview from './ProductReview';
 import Footer from '../../CommonComponents/Footer';
 import currencyFormat from '../../libs/Util';
+import { IShoppingCart } from '../../types/IShoppingCart';
 
 function IndividualProductPage() {
   const navigate = useNavigate();
-  const { productItem, setProductItem } = useContext(AuthContext);
+  const {
+    productItem, setProductItem, cartTotalItems, setCartTotalItems, shoppingCart, setShoppingCart,
+  } = useContext(AuthContext);
   const [addToCartNumber, setAddToCartNumber] = useState<number>(1);
 
   useEffect(() => {
@@ -34,6 +37,32 @@ function IndividualProductPage() {
   const handleBackButton = () => {
     setProductItem({});
     navigate('/products');
+  };
+
+  const handleAddToCart = () => {
+    setCartTotalItems(cartTotalItems + addToCartNumber);
+    const newShoppingCartItem: IShoppingCart = {
+      id: productItem.id,
+      name: productItem.name,
+      category: productItem.category,
+      price: productItem.price,
+      image_url: productItem.image_url,
+      quantity: addToCartNumber,
+    };
+    if (shoppingCart.find((cart) => cart.id === productItem.id)) {
+      const updateProductQuantity = shoppingCart.map((cart) => {
+        if (cart.id === productItem.id && cart.quantity) {
+          // eslint-disable-next-line no-param-reassign
+          cart.quantity += addToCartNumber;
+          return cart;
+        }
+        return cart;
+      });
+      setShoppingCart(updateProductQuantity);
+    } else {
+      setShoppingCart([...shoppingCart, newShoppingCartItem]);
+    }
+    navigate('/cart');
   };
 
   return (
@@ -95,7 +124,8 @@ function IndividualProductPage() {
             {productItem.active === true ? (
               <button
                 type="button"
-                className="bg-slate-900 text-white py-2 px-3 ml-3 rounded-md hover:bg-slate-800 text-xl"
+                className="bg-slate-900 text-white py-2 px-3 ml-8 rounded-md hover:bg-slate-800 text-xl"
+                onClick={handleAddToCart}
               >
                 Add to Cart
 

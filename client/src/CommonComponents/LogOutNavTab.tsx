@@ -10,6 +10,7 @@ function LogOutNavtab() {
     fetch('/logout', { method: 'DELETE' });
     setUser({});
     setProductItem({});
+    localStorage.clear();
     navigate('/login');
   };
 

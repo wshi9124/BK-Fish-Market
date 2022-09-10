@@ -16,7 +16,7 @@ import AdminPrivateRoutes from './utils/AdminPrivateRoute';
 import UserPrivateRoutes from './utils/UserPrivateroutes';
 
 function App() {
-  const { setUser } = useContext(AuthContext);
+  const { setUser, cartTotalItems, shoppingCart } = useContext(AuthContext);
   const navigate = useNavigate();
 
   // Auto Login
@@ -36,6 +36,13 @@ function App() {
         }
       });
   }, []);
+
+  // store shopping cart in local storage
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(shoppingCart));
+    localStorage.setItem('cartNumber', JSON.stringify(cartTotalItems));
+  }, [shoppingCart, cartTotalItems]);
 
   return (
     <Routes>

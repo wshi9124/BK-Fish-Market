@@ -14,9 +14,9 @@ const AuthContext = createContext({
   setCartTotalItems: (cartTotalItems: number) => {},
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
   setProductItem: (productItem: IProduct) => {},
-  shoppingCart: EmptyShoppingCartValue,
+  shoppingCart: [EmptyShoppingCartValue],
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-  setShoppingCart: (shoppingCart: IShoppingCart) => {},
+  setShoppingCart: (shoppingCart: IShoppingCart[]) => {},
 });
 
 interface Props {
@@ -24,10 +24,12 @@ interface Props {
 }
 
 export function AuthProvider({ children }:Props) {
+  const getCartNumberFromLocalStorage = JSON.parse(localStorage?.getItem('cartNumber') || '0');
+  const getShoppingCartFromLocalStorage = JSON.parse(localStorage?.getItem('cart') || '[]');
   const [user, setUser] = useState<IUser>(EmptyUserValue);
   const [productItem, setProductItem] = useState<IProduct>(EmptyProductValue);
-  const [cartTotalItems, setCartTotalItems] = useState<number>(0);
-  const [shoppingCart, setShoppingCart] = useState<IShoppingCart>(EmptyShoppingCartValue);
+  const [cartTotalItems, setCartTotalItems] = useState<number>(getCartNumberFromLocalStorage || 0);
+  const [shoppingCart, setShoppingCart] = useState<IShoppingCart[]>(getShoppingCartFromLocalStorage || []);
 
   return (
     <AuthContext.Provider value={{
