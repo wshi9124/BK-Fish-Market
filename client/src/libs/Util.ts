@@ -1,6 +1,5 @@
 const currencyFormat = (x: number) => {
-  x.toFixed(2);
-  const result = x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  const result = x.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
   return `$${result}`;
 };
 

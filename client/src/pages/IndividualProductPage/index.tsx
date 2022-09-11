@@ -12,7 +12,7 @@ import { IShoppingCart } from '../../types/IShoppingCart';
 function IndividualProductPage() {
   const navigate = useNavigate();
   const {
-    productItem, setProductItem, cartTotalItems, setCartTotalItems, shoppingCart, setShoppingCart,
+    productItem, setProductItem, shoppingCart, setShoppingCart,
   } = useContext(AuthContext);
   const [addToCartNumber, setAddToCartNumber] = useState<number>(1);
 
@@ -40,7 +40,6 @@ function IndividualProductPage() {
   };
 
   const handleAddToCart = () => {
-    setCartTotalItems(cartTotalItems + addToCartNumber);
     const newShoppingCartItem: IShoppingCart = {
       id: productItem.id,
       name: productItem.name,
@@ -102,16 +101,7 @@ function IndividualProductPage() {
           </p>
           <p className="text-4xl mt-5">{currencyFormat(productItem.price!)}</p>
           <div className="flex justify-center mt-5">
-            {productItem.active === true ? (
-              <button
-                type="button"
-                className="text-4xl px-3 py-1 border rounded-full bg-zinc-100 hover:bg-zinc-200"
-                onClick={handlePlusButton}
-              >
-                +
-              </button>
-            ) : ''}
-            {productItem.active === true ? <p className="text-4xl px-3 py-1">{addToCartNumber}</p> : null}
+
             {productItem.active === true ? (
               <button
                 type="button"
@@ -119,6 +109,16 @@ function IndividualProductPage() {
                 onClick={handleMinusButton}
               >
                 -
+              </button>
+            ) : ''}
+            {productItem.active === true ? <p className="text-4xl px-3 py-1">{addToCartNumber}</p> : null}
+            {productItem.active === true ? (
+              <button
+                type="button"
+                className="text-4xl px-3 py-1 border rounded-full bg-zinc-100 hover:bg-zinc-200"
+                onClick={handlePlusButton}
+              >
+                +
               </button>
             ) : ''}
             {productItem.active === true ? (

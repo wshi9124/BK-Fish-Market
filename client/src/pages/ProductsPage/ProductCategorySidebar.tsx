@@ -114,7 +114,6 @@ function ProductCategorySidebar({ setProductData }:Props) {
 
       </button>
     </div>
-
   );
 }
 

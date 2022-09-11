@@ -16,7 +16,9 @@ import AdminPrivateRoutes from './utils/AdminPrivateRoute';
 import UserPrivateRoutes from './utils/UserPrivateroutes';
 
 function App() {
-  const { setUser, cartTotalItems, shoppingCart } = useContext(AuthContext);
+  const {
+    setUser, setCartTotalItems, shoppingCart,
+  } = useContext(AuthContext);
   const navigate = useNavigate();
 
   // Auto Login
@@ -37,12 +39,22 @@ function App() {
       });
   }, []);
 
-  // store shopping cart in local storage
+  // Find Cart Total Items
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const findCartTotalItems = shoppingCart.reduce((a, b) => a + b.quantity!, 0);
+    setCartTotalItems(findCartTotalItems);
+  }, [shoppingCart]);
 
+  // Find Cart Subtotal
+  useEffect(() => {
+
+  }, [shoppingCart]);
+
+  // store shopping cart in local storage
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(shoppingCart));
-    localStorage.setItem('cartNumber', JSON.stringify(cartTotalItems));
-  }, [shoppingCart, cartTotalItems]);
+  }, [shoppingCart]);
 
   return (
     <Routes>
