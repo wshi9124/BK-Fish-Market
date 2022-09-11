@@ -1,3 +1,6 @@
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { useContext, useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import AuthContext from './AuthProvider';
@@ -17,7 +20,7 @@ import UserPrivateRoutes from './utils/UserPrivateroutes';
 
 function App() {
   const {
-    setUser, setCartTotalItems, shoppingCart,
+    setUser, setCartTotalItems, shoppingCart, setSubtotal,
   } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -41,14 +44,18 @@ function App() {
 
   // Find Cart Total Items
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const findCartTotalItems = shoppingCart.reduce((a, b) => a + b.quantity!, 0);
     setCartTotalItems(findCartTotalItems);
   }, [shoppingCart]);
 
   // Find Cart Subtotal
   useEffect(() => {
-
+    const findCartSubTotal = shoppingCart.map((item) => {
+      if (item.quantity && item.price) {
+        return item.quantity * item.price;
+      }
+    }).reduce((a, b) => a! + b!, 0);
+    setSubtotal(findCartSubTotal || 0);
   }, [shoppingCart]);
 
   // store shopping cart in local storage

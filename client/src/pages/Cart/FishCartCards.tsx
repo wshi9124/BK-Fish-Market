@@ -72,7 +72,7 @@ function FishCartCards() {
 
         </p>
         <button
-          className="w-1/6 text-red-500"
+          className="w-1/6 text-red-400 hover:text-red-500 text-lg"
           type="button"
           onClick={() => handleRemoveSingleItem(product)}
         >
@@ -95,7 +95,7 @@ function FishCartCards() {
           <p className="w-1/5">Quantity</p>
           <p className="w-1/6">Price</p>
           <button
-            className="w-1/6 text-red-500 text-lg"
+            className="w-1/6 text-red-400 hover:text-red-500 text-lg"
             type="button"
             onClick={handleRemoveAllItems}
           >
