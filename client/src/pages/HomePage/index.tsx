@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // import AuthContext from '../../AuthProvider';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import Logo from '../../CommonComponents/Logo';
 import NavBar from '../../CommonComponents/Navbar';
 import Footer from '../../CommonComponents/Footer';
@@ -21,15 +22,16 @@ function HomePage() {
     setCurrentIndex(count);
   };
 
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+    startSlider();
+  }, []);
+
   const startSlider = () => {
     setInterval(() => {
       handleNextClick();
-    }, 6000);
+    }, 3000);
   };
-
-  useEffect(() => {
-    startSlider();
-  }, []);
 
   return (
     <div className="h-screen w-screen overflow-hidden">
@@ -39,24 +41,31 @@ function HomePage() {
         <img
           src={featuredImages[currentIndex]}
           alt=""
-          className="w-screen h-screen bg-center opacity-80"
+          className="w-screen h-screen bg-center opacity-75"
           style={{ top: '100px' }}
         />
-        <div className="absolute w-full top-1/2 transform -translate-y-1/2 flex justify-between items-start px-3">
+        <div
+          className="absolute w-full top-1/2 transform -translate-y-1/2 flex justify-between items-start px-3 text-8xl z-50"
+        >
           <button
             type="button"
+            className="opacity-50 hover:opacity-100"
             onClick={handlePrevClick}
           >
-            Previous
+            <IoIosArrowBack />
 
           </button>
           <button
             type="button"
+            className="opacity-50 hover:opacity-100"
             onClick={handleNextClick}
           >
-            Next
+            <IoIosArrowForward />
 
           </button>
+        </div>
+        <div className="absolute top-1/2 transform -translate-y-1/2 flex justify-center w-full z-10">
+          <p className="text-8xl text-slate-800 font-bold">hi cksdbcisu</p>
         </div>
       </div>
       <Footer />
