@@ -10,6 +10,7 @@ import ProductPage from './pages/ProductsPage';
 import IndividualProductPage from './pages/IndividualProductPage';
 import Cart from './pages/Cart';
 import PurchaseHistory from './pages/PurchaseHistory';
+import CheckOutPage from './pages/CheckOutPage';
 import Login from './pages/Login';
 import CreateAccountPage from './pages/Login/CreateAccountPage';
 import Admin from './pages/Admin';
@@ -74,6 +75,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="createAccount" element={<CreateAccountPage />} />
       <Route element={<UserPrivateRoutes />}>
+        <Route path="/checkout" element={<CheckOutPage />} />
         <Route path="/purchaseHistory" element={<PurchaseHistory />} />
       </Route>
       <Route element={<AdminPrivateRoutes />}>

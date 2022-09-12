@@ -13,31 +13,32 @@ function Cart() {
 
   // eslint-disable-next-line consistent-return
   const renderCheckOut = () => {
+    if (user.account_type === 'user' && cartTotalItems > 0) {
+      return (
+        <button
+          type="button"
+          className="w-1/6 text-center bg-slate-900 text-white mt-1 py-2 px-10 rounded-md hover:bg-slate-800 text-xl"
+          onClick={() => navigate('/checkout')}
+        >
+          CheckOut
+
+        </button>
+      );
+    }
     if (cartTotalItems === 0) {
       return <p className="w-1/6 text-center text-3xl">No Items in Cart</p>;
     }
-    if (user.first_name === '') {
-      return (
-        <div className="w-1/6 text-center text-3xl" style={{ marginTop: '-10px' }}>
-          <p className="text-lg">Log in to checkout</p>
-          <button
-            className="bg-slate-900 text-white mt-1 py-2 px-10 rounded-md hover:bg-slate-800 text-xl"
-            onClick={() => { navigate('/login'); }}
-            type="button"
-          >
-            Log In
-          </button>
-        </div>
-      );
-    }
     return (
-      <button
-        type="button"
-        className="w-1/6 text-center bg-slate-900 text-white mt-1 py-2 px-10 rounded-md hover:bg-slate-800 text-xl"
-      >
-        CheckOut
-
-      </button>
+      <div className="w-1/6 text-center text-3xl" style={{ marginTop: '-10px' }}>
+        <p className="text-lg">Log in to checkout</p>
+        <button
+          className="bg-slate-900 text-white mt-1 py-2 px-10 rounded-md hover:bg-slate-800 text-xl"
+          onClick={() => { navigate('/login'); }}
+          type="button"
+        >
+          Log In
+        </button>
+      </div>
     );
   };
 
