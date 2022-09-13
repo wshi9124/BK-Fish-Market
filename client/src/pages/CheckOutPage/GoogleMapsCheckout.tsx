@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react';
-import {
-  useJsApiLoader, GoogleMap, Marker,
-} from '@react-google-maps/api';
+import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
 
-function GoogleMapsCheckout() {
+interface Props {
+  location:string,
+  setLocation: React.Dispatch<React.SetStateAction<string>>
+}
+
+function GoogleMapsCheckout({ location, setLocation }:Props) {
   const [maps, setMaps] = useState<any>(/** @type google.maps.GoogleMap */(null));
-  const [location, setLocation] = useState<string>('');
   const [lat, setLat] = useState<number>(40.693030);
   const [lng, setLng] = useState<number>(-73.928160);
   const [geocodeMessage, setGeocodeMessage] = useState<string>('');
@@ -46,7 +48,7 @@ function GoogleMapsCheckout() {
           className="text-xl border p-3 hover:outline-none focus:outline-none focus:ring-1 focus:ring-slate-900 rounded-md w-full"
           type="text"
           name="address"
-          placeholder="Shipping Adress"
+          placeholder="Shipping Address"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
         />

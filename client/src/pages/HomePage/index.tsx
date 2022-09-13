@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react';
-// import AuthContext from '../../AuthProvider';
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import TextAnimation from 'react-text-animations';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import AuthContext from '../../AuthProvider';
 import Logo from '../../CommonComponents/Logo';
 import NavBar from '../../CommonComponents/Navbar';
 import Footer from '../../CommonComponents/Footer';
 
 let count = 0;
 function HomePage() {
-  // const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const featuredImages = ['/fishCarousel1.jpeg', '/fishCarousel2.jpeg', '/fishCarousel3.jpeg'];
 
@@ -22,15 +25,65 @@ function HomePage() {
     setCurrentIndex(count);
   };
 
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-use-before-define
-    startSlider();
-  }, []);
-
-  const startSlider = () => {
-    setInterval(() => {
-      handleNextClick();
-    }, 3000);
+  const renderHomePageMessages = () => {
+    if ((currentIndex === 0 && user.id === -1) || (currentIndex === 0 && user.id === undefined)) {
+      return (
+        <div className="text-7xl text-slate-800 font-bold">
+          <TextAnimation.Push
+            target="B&K Fish Mini Market"
+            text={['', 'B&K', 'Fish', 'Market', 'B&K Fish Market']}
+            animation={{
+              duration: 1000,
+              delay: 2500,
+              timingFunction: 'ease-out',
+            }}
+            loop={false}
+          >
+            Welcome to B&K Fish Mini Market
+          </TextAnimation.Push>
+        </div>
+      );
+    }
+    if (currentIndex === 0 && (user.id !== -1 || user.first_name !== '')) {
+      return (
+        <div className="text-7xl text-slate-800 font-bold">
+          <TextAnimation.Push
+            target=":"
+            text={['', `${user.first_name}`, `${user.last_name}`, `${user.first_name} ${user.last_name}`]}
+            animation={{
+              duration: 1000,
+              delay: 2000,
+              timingFunction: 'ease-out',
+            }}
+            loop={false}
+          >
+            Welcome :
+          </TextAnimation.Push>
+        </div>
+      );
+    }
+    if (currentIndex === 1) {
+      return (
+        <div className="text-7xl text-slate-800 font-bold w-2/3">
+          <p>Get free shipping with discount code iloveseafood</p>
+        </div>
+      );
+    }
+    if (currentIndex === 2) {
+      return (
+        <div className="text-7xl text-slate-800 font-bold w-2/3">
+          <p>We also offer fresh cooked seafood</p>
+          <button
+            className="underline cursor-pointer py-2 px-2 text-6xl"
+            type="button"
+            onClick={() => navigate('/about')}
+          >
+            Click here to learn more
+          </button>
+        </div>
+      );
+    }
+    return '';
   };
 
   return (
@@ -41,7 +94,7 @@ function HomePage() {
         <img
           src={featuredImages[currentIndex]}
           alt=""
-          className="w-screen h-screen bg-center opacity-75"
+          className="w-screen h-screen bg-center opacity-70"
           style={{ top: '100px' }}
         />
         <div
@@ -53,7 +106,6 @@ function HomePage() {
             onClick={handlePrevClick}
           >
             <IoIosArrowBack />
-
           </button>
           <button
             type="button"
@@ -61,11 +113,10 @@ function HomePage() {
             onClick={handleNextClick}
           >
             <IoIosArrowForward />
-
           </button>
         </div>
-        <div className="absolute top-1/2 transform -translate-y-1/2 flex justify-center w-full z-10">
-          <p className="text-8xl text-slate-800 font-bold">hi cksdbcisu</p>
+        <div className="absolute top-1/2 transform -translate-y-1/2 flex justify-center text-center w-full z-10">
+          {renderHomePageMessages()}
         </div>
       </div>
       <Footer />
