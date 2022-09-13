@@ -9,19 +9,50 @@ import currencyFormat from '../../libs/Util';
 
 function CheckoutForm() {
   const navigate = useNavigate();
-  const { subtotal, cartTotalItems, shoppingCart } = useContext(AuthContext);
+  const {
+    subtotal, cartTotalItems, shoppingCart, user,
+  } = useContext(AuthContext);
   const [location, setLocation] = useState<string>('');
   const [paymentMethod, setPaymentMethod] = useState<string>('Paypal');
   const [discountCode, setDiscountCode] = useState<string>('');
   const [discountMessage, setDiscountMessage] = useState<string>('');
   const tax = (subtotal * 0.08875);
   const [shippingCost, setShippingCost] = useState<number>(20);
+  const [cartErrorMessages, setCartErrorMessages] = useState<[] | ''>([]);
   const total = subtotal + tax + shippingCost;
 
   const isRadioSelected = (value: string): boolean => paymentMethod === value;
 
   const handleCheckOut = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const cartTotalData = {
+      user_id: user.id,
+      location,
+      tax: tax.toFixed(2),
+      shipping: shippingCost.toFixed(2),
+      purchased_items: shoppingCart,
+    };
+    fetch('/purchases', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accepts: 'application/json',
+      },
+      body: JSON.stringify(cartTotalData),
+    })
+      .then((res) => {
+        if (res.ok) {
+          res.json()
+            .then(() => {
+              navigate('purchasehistory');
+            });
+        } else {
+          res.json()
+            .then(({ errors }) => {
+              setCartErrorMessages(errors);
+            });
+        }
+      });
   };
 
   const handleVerifyDiscountCode = () => {
@@ -35,7 +66,7 @@ function CheckoutForm() {
   };
 
   const renderCheckOutProducts = shoppingCart.map((item) => (
-    <div className="flex text-3xl">
+    <div className="flex text-xl" key={item.id}>
       <p>
         {item.quantity}
         {' '}
@@ -56,6 +87,14 @@ function CheckoutForm() {
         className="w-1/2 border rounded-lg px-10 py-5 mb-10"
         onSubmit={handleCheckOut}
       >
+        <p className="text-center text-red-500 text-lg">
+          {cartErrorMessages ? cartErrorMessages.map((error) => (
+            <span key={error}>
+              {error}
+              {' '}
+            </span>
+          )) : null}
+        </p>
         <GoogleMapsCheckout location={location} setLocation={setLocation} />
         <p className="text-lg font-semibold mb-2 mt-3 text-left">Payment Method</p>
 
@@ -144,12 +183,12 @@ function CheckoutForm() {
 
         <div className="flex mt-7">
           <div className="flex-col w-3/5 items-start">
-            <p className="text-3xl font-bold">
+            <p className="text-2xl font-bold">
               Item List- Total Items
               {' '}
               {cartTotalItems}
             </p>
-            <div className="h-36 overflow-auto">
+            <div className="h-32 overflow-auto">
               {renderCheckOutProducts}
             </div>
             <div>
@@ -163,23 +202,23 @@ function CheckoutForm() {
             </div>
           </div>
           <div className="flex flex-col w-2/5 justify-start items-start">
-            <p className="text-3xl font-bold">Price</p>
-            <p className="text-2xl">
+            <p className="text-2xl font-bold">Price</p>
+            <p className="text-xl">
               Subtotal:
               {' '}
               {currencyFormat(subtotal)}
             </p>
-            <p className="text-2xl">
+            <p className="text-xl">
               Tax (8.875%):
               {' '}
               {currencyFormat(tax)}
             </p>
-            <p className="text-2xl">
+            <p className="text-xl">
               Shipping:
               {' '}
               {currencyFormat(shippingCost)}
             </p>
-            <p className="text-4xl font-bold">
+            <p className="text-3xl font-bold">
               Total:
               {' '}
               {currencyFormat(total)}

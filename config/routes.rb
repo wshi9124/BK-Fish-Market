@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  resources :reviews, only:[:create, :show]
+  # resources :purchased_items
+  resources :purchases, only:[:create]
   resources :products, except: [:destroy, :show]
-  resources :users, only:[:create]
+  resources :users, only:[:create, :show]
   
   #To log in
   post "/login", to: "sessions#create" 
