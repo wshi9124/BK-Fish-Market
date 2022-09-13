@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :products, except: [:destroy]
+  resources :products, except: [:destroy, :show]
   resources :users, only:[:create]
   
   #To log in

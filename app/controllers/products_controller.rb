@@ -5,11 +5,6 @@ class ProductsController < ApplicationController
         render json: Product.all
     end
 
-    def show
-        product = find_product
-        render json: product
-    end
-
     def create
         product= Product.create!(product_params)
         render json: product, status: 201
