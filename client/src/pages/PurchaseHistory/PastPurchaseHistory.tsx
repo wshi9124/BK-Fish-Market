@@ -74,7 +74,7 @@ function PastPurchaseHistory({ purchaseData }:Props) {
           <p className="w-1/3">Items Purchased</p>
           <p className="w-1/4"> Purchase Price</p>
           <p className="w-1/4">Total</p>
-          <p className="w-1/4">Review</p>
+          <p className="w-1/4">Buy again</p>
         </div>
         <div className="flex">
           <div className="w-1/3">
@@ -102,7 +102,7 @@ function PastPurchaseHistory({ purchaseData }:Props) {
                 type="button"
                 onClick={() => handleReviewButton(item.product)}
               >
-                Review
+                Buy again
               </button>
             ))}
           </div>

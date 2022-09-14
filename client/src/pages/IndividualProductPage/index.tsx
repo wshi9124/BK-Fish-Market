@@ -8,9 +8,11 @@ import ProductReview from './ProductReview';
 import Footer from '../../CommonComponents/Footer';
 import currencyFormat from '../../libs/Util';
 import { IShoppingCart } from '../../types/IShoppingCart';
+import { EmptyReviewsValue, IReviews } from '../../types/IReviews';
 
 function IndividualProductPage() {
   const navigate = useNavigate();
+  const [productReviews, setProductReviews] = useState<IReviews[]>([EmptyReviewsValue]);
   const {
     productItem, setProductItem, shoppingCart, setShoppingCart,
   } = useContext(AuthContext);
@@ -20,6 +22,18 @@ function IndividualProductPage() {
     if (productItem.name === '') {
       navigate('/products');
     }
+  }, []);
+
+  useEffect(() => {
+    fetch(`/reviews/${productItem.id}`)
+      .then((res) => {
+        if (res.ok) {
+          res.json()
+            .then((data) => {
+              setProductReviews(data);
+            });
+        }
+      });
   }, []);
 
   const handleMinusButton = () => {
@@ -65,7 +79,7 @@ function IndividualProductPage() {
   };
 
   return (
-    <div className="mb-6">
+    <div className="mb-20">
       <Logo />
       <NavBar />
       <div className="flex mt-10 px-20 mx-10">
@@ -138,11 +152,10 @@ function IndividualProductPage() {
             className="bg-slate-900 text-white mt-10 py-3 px-6 rounded-md hover:bg-slate-800 w-60 text-xl"
           >
             Back to all products
-
           </button>
         </div>
       </div>
-      <ProductReview />
+      <ProductReview productReviews={productReviews} setProductReviews={setProductReviews} />
       <Footer />
     </div>
   );
