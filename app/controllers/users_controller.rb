@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        render json: current_user
+        render json: current_user, serializer: PurchaseHistorySerializer, include: ["purchases", "purchases.purchased_items", "purchases.purchased_items.product"]
     end
 
     private

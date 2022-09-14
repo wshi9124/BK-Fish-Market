@@ -48,7 +48,7 @@ function HomePage() {
       return (
         <div className="text-7xl text-slate-800 font-bold">
           <TextAnimation.Push
-            target=":"
+            target="name"
             text={['', `${user.first_name}`, `${user.last_name}`, `${user.first_name} ${user.last_name}`]}
             animation={{
               duration: 1000,
@@ -57,7 +57,7 @@ function HomePage() {
             }}
             loop={false}
           >
-            Welcome :
+            Welcome name
           </TextAnimation.Push>
         </div>
       );

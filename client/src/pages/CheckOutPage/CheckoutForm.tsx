@@ -10,7 +10,7 @@ import currencyFormat from '../../libs/Util';
 function CheckoutForm() {
   const navigate = useNavigate();
   const {
-    subtotal, cartTotalItems, shoppingCart, user,
+    subtotal, cartTotalItems, shoppingCart, user, setShoppingCart,
   } = useContext(AuthContext);
   const [location, setLocation] = useState<string>('');
   const [paymentMethod, setPaymentMethod] = useState<string>('Paypal');
@@ -31,6 +31,7 @@ function CheckoutForm() {
       tax: tax.toFixed(2),
       shipping: shippingCost.toFixed(2),
       purchased_items: shoppingCart,
+      payment_method: paymentMethod,
     };
     fetch('/purchases', {
       method: 'POST',
@@ -44,7 +45,8 @@ function CheckoutForm() {
         if (res.ok) {
           res.json()
             .then(() => {
-              navigate('purchasehistory');
+              setShoppingCart([]);
+              navigate('/purchaseHistory');
             });
         } else {
           res.json()

@@ -5,6 +5,7 @@ class CreatePurchases < ActiveRecord::Migration[7.0]
       t.string :location
       t.float :tax
       t.float :shipping
+      t.string :payment_method
 
       t.timestamps
     end

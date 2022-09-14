@@ -12,7 +12,7 @@ class PurchasesController < ApplicationController
     private 
 
     def purchase_params
-        params.permit(:user_id, :location, :tax, :shipping)
+        params.permit(:user_id, :location, :tax, :shipping, :payment_method)
     end
 
 end

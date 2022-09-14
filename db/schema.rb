@@ -66,6 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_181731) do
     t.string "location"
     t.float "tax"
     t.float "shipping"
+    t.string "payment_method"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
