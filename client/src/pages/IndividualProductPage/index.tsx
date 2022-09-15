@@ -1,6 +1,7 @@
 /* eslint-disable  @typescript-eslint/no-non-null-assertion */
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ReactStars from 'react-stars';
 import AuthContext from '../../AuthProvider';
 import Logo from '../../CommonComponents/Logo';
 import NavBar from '../../CommonComponents/Navbar';
@@ -17,6 +18,7 @@ function IndividualProductPage() {
     productItem, setProductItem, shoppingCart, setShoppingCart,
   } = useContext(AuthContext);
   const [addToCartNumber, setAddToCartNumber] = useState<number>(1);
+  const [averageReview, setAverageReview] = useState<number | string >('');
 
   useEffect(() => {
     if (productItem.name === '') {
@@ -31,6 +33,8 @@ function IndividualProductPage() {
           res.json()
             .then((data) => {
               setProductReviews(data);
+              const averageStar = data.length ? data.map(((review:IReviews) => review.star)).reduce((a:number, b:number) => a + b) / data.length : 'No Reviews';
+              setAverageReview(averageStar);
             });
         }
       });
@@ -108,8 +112,21 @@ function IndividualProductPage() {
               </mark>
             </strong>
           </p>
-          <p className="text-2xl mt-5">Average Stars Place holder</p>
-          <p className="text-2xl mt-5">
+          <div className="flex justify-center items-center mt-4">
+            <ReactStars
+              count={5}
+              value={averageReview || 0}
+              size={20}
+              color2="#ffd700"
+              edit={false}
+            />
+            <p className="text-xl">
+              -
+              {' '}
+              {averageReview}
+            </p>
+          </div>
+          <p className="text-2xl mt-2">
             {' '}
             {productItem.category}
           </p>

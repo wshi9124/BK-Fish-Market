@@ -63,6 +63,7 @@ function ProductReview({ productReviews, setProductReviews }:Props) {
           value={review.star}
           size={20}
           color2="#ffd700"
+          edit={false}
         />
       </div>
       <p>{new Date(review.created_at).toDateString()}</p>
