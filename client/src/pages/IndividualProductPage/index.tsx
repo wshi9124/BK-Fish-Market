@@ -18,7 +18,7 @@ function IndividualProductPage() {
     productItem, setProductItem, shoppingCart, setShoppingCart,
   } = useContext(AuthContext);
   const [addToCartNumber, setAddToCartNumber] = useState<number>(1);
-  const [averageReview, setAverageReview] = useState<number | string >('');
+  const [averageReview, setAverageReview] = useState<number>(0);
 
   useEffect(() => {
     if (productItem.name === '') {
@@ -33,12 +33,12 @@ function IndividualProductPage() {
           res.json()
             .then((data) => {
               setProductReviews(data);
-              const averageStar = data.length ? data.map(((review:IReviews) => review.star)).reduce((a:number, b:number) => a + b) / data.length : 'No Reviews';
+              const averageStar = data.length ? data.map(((review:IReviews) => review.star)).reduce((a:number, b:number) => a + b) / data.length : -1;
               setAverageReview(averageStar);
             });
         }
       });
-  }, []);
+  }, [productReviews]);
 
   const handleMinusButton = () => {
     if (addToCartNumber > 1) {
@@ -123,7 +123,7 @@ function IndividualProductPage() {
             <p className="text-xl">
               -
               {' '}
-              {averageReview}
+              {averageReview > -1 ? averageReview.toFixed(1) : 'No Review'}
             </p>
           </div>
           <p className="text-2xl mt-2">

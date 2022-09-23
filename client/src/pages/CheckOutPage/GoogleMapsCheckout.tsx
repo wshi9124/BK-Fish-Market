@@ -12,7 +12,6 @@ function GoogleMapsCheckout({ location, setLocation }:Props) {
   const [lat, setLat] = useState<number>(40.693030);
   const [lng, setLng] = useState<number>(-73.928160);
   const [geocodeMessage, setGeocodeMessage] = useState<string>('');
-  const center = { lat: 40.693030, lng: -73.928160 };
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -66,7 +65,7 @@ function GoogleMapsCheckout({ location, setLocation }:Props) {
       </div>
       <div className="h-96 w-full">
         <GoogleMap
-          center={center}
+          center={{ lat, lng }}
           zoom={13}
           mapContainerStyle={{ width: '100%', height: '100%' }}
           options={{

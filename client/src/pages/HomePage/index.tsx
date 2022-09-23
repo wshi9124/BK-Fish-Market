@@ -57,7 +57,7 @@ function HomePage() {
             }}
             loop={false}
           >
-            Welcome
+            Welcome name
           </TextAnimation.Push>
         </div>
       );

@@ -34,7 +34,6 @@ function ProductReview({ productReviews, setProductReviews }:Props) {
           res.json()
             .then((data) => {
               setProductReviews([...productReviews, data]);
-              setReviewMessage('Review has been sucessfully made');
             });
         } else {
           res.json()
