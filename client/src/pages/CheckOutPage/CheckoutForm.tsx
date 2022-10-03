@@ -86,7 +86,7 @@ function CheckoutForm() {
   return (
     <div className="flex justify-center mt-5">
       <form
-        className="w-1/2 border rounded-lg px-10 py-5 mb-10"
+        className="w-3/5 border rounded-lg px-10 py-5 mb-10"
         onSubmit={handleCheckOut}
       >
         <p className="text-center text-red-500 text-lg">
