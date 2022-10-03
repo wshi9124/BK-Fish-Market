@@ -28,7 +28,7 @@ function GoogleMapsCheckout({ location, setLocation }:Props) {
       .then((response) => response.json())
       .then((data) => {
         if (data.status === 'OK') {
-          setGeocodeMessage('Location has been formatted, Click again to center on map');
+          setGeocodeMessage('Location has been formatted');
           setLocation(data.results[0].formatted_address);
           setLat(data.results[0].geometry.location.lat);
           setLng(data.results[0].geometry.location.lng);
