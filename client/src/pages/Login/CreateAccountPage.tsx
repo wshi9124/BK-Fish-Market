@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../../AuthProvider';
 import Logo from '../../CommonComponents/Logo';
+import Footer from '../../CommonComponents/Footer';
 
 function CreateAccountPage() {
   const navigate = useNavigate();
@@ -56,7 +57,7 @@ function CreateAccountPage() {
   };
 
   return (
-    <div className="mb-10">
+    <div className="mb-12">
       <Logo />
       <div className="flex flex-col text-center justify-center items-center">
         <h1 className="text-5xl mt-10">Create New Account</h1>
@@ -153,6 +154,7 @@ function CreateAccountPage() {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
