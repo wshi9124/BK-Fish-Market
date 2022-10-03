@@ -1,4 +1,4 @@
-##Technologies used:
+#Technologies used:
 ######
 Frontend: TypeScript, React, JavaScript, Tailwind CSS
 ######
