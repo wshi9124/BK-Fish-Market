@@ -1,14 +1,18 @@
 # Technologies used:
 ######
-Frontend: TypeScript, React, JavaScript, Tailwind CSS, local storage (to store cart items), 
+Frontend: TypeScript, React, JavaScript, Tailwind CSS, local storage (to store cart items), React Router
 ######
-Backend: Ruby on Rails, Active Storage (to store , Action Mailer, Bcrypt (to salt and hash password) 
+Backend: Ruby on Rails, Active Storage (to store product images), Action Mailer (to send out greeting emails), Bcrypt (to salt and hash password) 
 ######
 Other: Google Maps API, Google Geocoding API
 
+# Security
+
+
 # Features 
 ######
-Security 
+
+
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 19 38 PM" src="https://user-images.githubusercontent.com/104730743/193691309-0a6f4c55-ba09-4411-9a20-5247adebead5.png">
 
