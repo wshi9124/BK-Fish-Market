@@ -1,4 +1,4 @@
-BK Fish Market is an E-Commerce site based of the needs and demands of a real client to promote their business. It includes both a user side to purchase products and an admin side to edit, add, and deactivate products. 
+BK Fish Market is an E-Commerce site based of the needs and demands of a real client to promote their business. It includes both a user side to purchase products and an admin interface to edit, add, and deactivate products. 
 
 # Technologies used:
 ######
