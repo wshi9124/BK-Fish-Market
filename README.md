@@ -4,6 +4,8 @@ Frontend: TypeScript, React, JavaScript, Tailwind CSS
 ######
 Backend: Ruby on Rails, Active Storage, Action Mailer, Bcrypt 
 
+# Features 
+
 <img width="500" alt="Screen Shot 2022-10-03 at 3 19 38 PM" src="https://user-images.githubusercontent.com/104730743/193691309-0a6f4c55-ba09-4411-9a20-5247adebead5.png">
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 22 50 PM" src="https://user-images.githubusercontent.com/104730743/193691593-3ad4c934-dd10-4930-a3b5-add8356005a5.png">
