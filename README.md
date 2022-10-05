@@ -9,7 +9,8 @@ Backend: Ruby on Rails, Active Storage (to store product images), Action Mailer 
 Other: Google Maps API, Google Geocoding API
 
 # Security
-
+This project uses sessions to authenticate users and Bcrypt to encrypt passwords. 
+There are separate protected routes (private routes) for the user side and admin side.  
 
 # Features 
 ######
