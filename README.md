@@ -36,6 +36,8 @@ Cart Items are stored in local storage. This way, users can view their cart even
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 24 29 PM" src="https://user-images.githubusercontent.com/104730743/193692097-9865d287-941c-4e04-b034-78b1b532c33a.png">
 
+<img width="500" alt="Screen Shot 2022-10-05 at 5 36 32 PM" src="https://user-images.githubusercontent.com/104730743/194168848-56d5b496-5ea6-43a1-9e30-8bbe12a70c88.png">
+
 <img width="500" alt="Screen Shot 2022-10-03 at 3 27 06 PM" src="https://user-images.githubusercontent.com/104730743/193694869-401544a9-26bf-40c3-9f15-f453c99ad7c1.png">
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 29 30 PM" src="https://user-images.githubusercontent.com/104730743/193691847-a128d399-4cc0-4e28-9dd5-47d3e9ce37d0.png">
