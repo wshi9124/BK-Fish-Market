@@ -1,3 +1,5 @@
+BK Fish Market is an E-Commerce site based of the needs and demands of a real client to promote their business. It includes both a user side to purchase products and an admin side to edit, add, and deactivate products. 
+
 # Technologies used:
 ######
 Frontend: TypeScript, React, JavaScript, Tailwind CSS, local storage (to store cart items), React Router
