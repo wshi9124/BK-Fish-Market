@@ -17,12 +17,15 @@ There are separate protected routes (private routes) for the user routes and adm
 When a user first enters the site, the Rails backend will check if there is a session. If there is, it will automatically log the user in and navigate the user to the appropriate route. 
 ######
 The home page features a carousel. The first page of the carousel has the welcome message. If a user is not logged in, it will say "Welcome to B&K Fish Market". However, if they are logged in, it will say 'Welcome ${user_name}'. The second page of the carousel has the discount code for free shipping. The third page has a link to navigate the user to the About Us page.
+
 <img width="500" alt="Screen Shot 2022-10-03 at 3 19 38 PM" src="https://user-images.githubusercontent.com/104730743/193691309-0a6f4c55-ba09-4411-9a20-5247adebead5.png">
 
 The About Us page displays the most current information on B&K Fish Market. This includes images that link to B&K's actual UberEats, Grubhub, and DoorDash pages. It also uses Google Maps API so that users can get directions to the store. 
+
 <img width="500" alt="Screen Shot 2022-10-03 at 3 21 50 PM" src="https://user-images.githubusercontent.com/104730743/194146393-d1b35aae-c38f-4d07-b78c-60de3f977d45.png">
 
 The Products page displays all the active products that users can purchase. Users can also sort products by their category or search for them using the search bar. Users can then click on a product to display more info, add to cart, and see reviews for that product. This page is available to users even if they are not logged in.
+
 <img width="500" alt="Screen Shot 2022-10-03 at 3 22 50 PM" src="https://user-images.githubusercontent.com/104730743/193691593-3ad4c934-dd10-4930-a3b5-add8356005a5.png">
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 23 46 PM" src="https://user-images.githubusercontent.com/104730743/193693015-f1e7b495-3a96-4f94-b960-481ef83bbc20.png">
