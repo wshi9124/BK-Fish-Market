@@ -10,11 +10,11 @@ Other: Google Maps API, Google Geocoding API
 
 # Security
 This project uses sessions to authenticate users and Bcrypt to encrypt passwords. 
-There are separate protected routes (private routes) for the user side and admin side.  
+There are separate protected routes (private routes) for the user routes and admin routes.  
 
 # Features 
 ######
-
+When a user first enters the site, the Rails backend will check if there is a session. If there is, it will automatically log the user in and redirect the user to the appropriate route. 
 
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 19 38 PM" src="https://user-images.githubusercontent.com/104730743/193691309-0a6f4c55-ba09-4411-9a20-5247adebead5.png">
