@@ -23,7 +23,6 @@ The About Us page displays the most current information on B&K Fish Market. This
 <img width="500" alt="Screen Shot 2022-10-03 at 3 21 50 PM" src="https://user-images.githubusercontent.com/104730743/194146393-d1b35aae-c38f-4d07-b78c-60de3f977d45.png">
 
 The Products page displays all the active products that users can purchase. Users can also sort products by their category or search for them using the search bar. Users can then click on a product to display more info, add to cart, and see reviews for that product. This page is available to users even if they are not logged in.
-
 <img width="500" alt="Screen Shot 2022-10-03 at 3 22 50 PM" src="https://user-images.githubusercontent.com/104730743/193691593-3ad4c934-dd10-4930-a3b5-add8356005a5.png">
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 23 46 PM" src="https://user-images.githubusercontent.com/104730743/193693015-f1e7b495-3a96-4f94-b960-481ef83bbc20.png">
