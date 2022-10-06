@@ -44,7 +44,7 @@ Users can choose to make either a regular account or an admin account. Users nee
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 27 06 PM" src="https://user-images.githubusercontent.com/104730743/193694869-401544a9-26bf-40c3-9f15-f453c99ad7c1.png">
 
-On the Checkout page, users can format their address using Google Geocoding API. This is done by displaying the first result when fetching from the API. The map will also pan to the location that is formatted. If there is no result a error message will display. 
+On the Checkout page, users can format their address using Google Geocoding API. This is done by displaying the first result when fetching from the API. The map will also pan to the location that is formatted. If there is no result, a error message will display. Users can also input the discount code found on the home page for free shipping. Once a user checks out, they will be navigated to the Purchase History page.  
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 29 30 PM" src="https://user-images.githubusercontent.com/104730743/193691847-a128d399-4cc0-4e28-9dd5-47d3e9ce37d0.png">
 
