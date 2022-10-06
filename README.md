@@ -40,7 +40,7 @@ If a invalid username and password combination is typed in, a error message will
 
 <img width="500" alt="Screen Shot 2022-10-05 at 5 42 14 PM" src="https://user-images.githubusercontent.com/104730743/194169519-5210c46e-5561-4899-ae64-053c0d79cb10.png">
 
-Users can choose to make either a regular account or an admin account. Users need to pass a number of validations or else a error message will display. Once an account is made, a welcome email will be sent to the user and the user will be navigated to the appropriate page. 
+Users can choose to make either a regular account or an admin account. Users need to pass a number of validations or else a error message will display. Once an account is made, a welcome email will be sent and the user will be navigated to the appropriate page. 
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 27 06 PM" src="https://user-images.githubusercontent.com/104730743/193694869-401544a9-26bf-40c3-9f15-f453c99ad7c1.png">
 
