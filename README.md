@@ -29,7 +29,7 @@ The Products page displays all the active products that users can purchase. User
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 22 50 PM" src="https://user-images.githubusercontent.com/104730743/193691593-3ad4c934-dd10-4930-a3b5-add8356005a5.png">
 
-When a user clicks on a product, it will lead them to the Individual Product page. There, users can see the product's info, add to cart, and see reviews for that product. The counter to add to cart will not be less than 1 or more than 10. Users can only write a review if they are logged in and have not written a review for that product before. If they try, a error message will display. 
+When a user clicks on a product, it will navigate them to the Individual Product page. There, users can see the product's info, add to cart, and see reviews for that product. The counter to add to cart will not be less than 1 or more than 10. Users can only write a review if they are logged in and have not written a review for that product before. If they try, a error message will display. 
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 23 46 PM" src="https://user-images.githubusercontent.com/104730743/193693015-f1e7b495-3a96-4f94-b960-481ef83bbc20.png">
 
