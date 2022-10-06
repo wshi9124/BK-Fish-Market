@@ -53,19 +53,27 @@ If an invalid username and password combination is typed in, an error message wi
 <img width="500" alt="Screen Shot 2022-10-03 at 5 52 07 PM" src="https://user-images.githubusercontent.com/104730743/193692883-d2d44252-942e-4c76-b677-ae993fba9287.png">
 
 # System dependencies
+######
 Ruby: 3.1.2
+######
 Node: 16.17.1
+######
 PostgreSQL: 12.12
 
 # Configuration:
 # Install packages:
+######
 bundle install
+######
 npm install --prefix client
+######
 Database creation & initialization:
-
+######
 rails db:create db:migrate
 # How to run the test suite:
-
+######
 rails s
+######
 npm start --prefix client
+######
 open locolhost:4000 on your browser
