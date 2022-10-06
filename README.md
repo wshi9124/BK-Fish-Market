@@ -28,7 +28,7 @@ The Products page displays all the active products that users can purchase. User
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 22 50 PM" src="https://user-images.githubusercontent.com/104730743/193691593-3ad4c934-dd10-4930-a3b5-add8356005a5.png">
 
-When a user clicks on a product, it will lead them to the Individual Product page. There, users can see the product's info, add to cart, and see reviews for that product. The counter to add to cart will not be less than 1 or more than 10. Users can only write a review if they are logged in and have not written a review for that product before. If they try, an error message will display. 
+When a user clicks on a product, it will lead them to the Individual Product page. There, users can see the product's info, add to cart, and see reviews for that product. The counter to add to cart will not be less than 1 or more than 10. Users can only write a review if they are logged in and have not written a review for that product before. If they try, a error message will display. 
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 23 46 PM" src="https://user-images.githubusercontent.com/104730743/193693015-f1e7b495-3a96-4f94-b960-481ef83bbc20.png">
 
@@ -36,12 +36,11 @@ Cart Items are stored in local storage. This way, users can view their cart even
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 24 29 PM" src="https://user-images.githubusercontent.com/104730743/193692097-9865d287-941c-4e04-b034-78b1b532c33a.png">
 
-If an invalid username and password combination is typed in, an error message will display and the inputs will clear. If users log in as a user, they will be taken to the home page. 
-If users log in as an Admin, they will be taken to the admin interface. Once an account is made, a welcome email will be sent to the user and the user will be navigated to the appropriate page. 
+If a invalid username and password combination is typed in, a error message will display and the inputs will clear. If users log in as a user, they will be taken to the home page. If users log in as a Admin, they will be taken to the admin interface. 
 
 <img width="500" alt="Screen Shot 2022-10-05 at 5 42 14 PM" src="https://user-images.githubusercontent.com/104730743/194169519-5210c46e-5561-4899-ae64-053c0d79cb10.png">
 
-Users can choose to make either a regular account or an admin account. Users need to pass a number of validations or else an error message will display. 
+Users can choose to make either a regular account or an admin account. Users need to pass a number of validations or else a error message will display. Once an account is made, a welcome email will be sent to the user and the user will be navigated to the appropriate page. 
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 27 06 PM" src="https://user-images.githubusercontent.com/104730743/193694869-401544a9-26bf-40c3-9f15-f453c99ad7c1.png">
 
