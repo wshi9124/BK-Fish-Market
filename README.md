@@ -60,7 +60,7 @@ Admins can also add new products for sale. If a new product is sucessfully made,
 
 <img width="500" alt="Screen Shot 2022-10-03 at 5 29 01 PM" src="https://user-images.githubusercontent.com/104730743/193692158-03dc971c-dfee-411f-93b0-b5a87fe6ff9a.png">
 
-This is an example of the Individual Product page if the product is deactivated and a user tries to buy again 
+This is an example of the Individual Product page if the product is deactivated and a user tries to buy again.
 
 <img width="500" alt="Screen Shot 2022-10-03 at 5 52 07 PM" src="https://user-images.githubusercontent.com/104730743/193692883-d2d44252-942e-4c76-b677-ae993fba9287.png">
 
