@@ -44,6 +44,8 @@ Users can choose to make either a regular account or an admin account. Users nee
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 27 06 PM" src="https://user-images.githubusercontent.com/104730743/193694869-401544a9-26bf-40c3-9f15-f453c99ad7c1.png">
 
+On the Checkout page, users can format their address using Google Geocoding API. This is done by displaying the first result when a user clicks format address. The map will f
+
 <img width="500" alt="Screen Shot 2022-10-03 at 3 29 30 PM" src="https://user-images.githubusercontent.com/104730743/193691847-a128d399-4cc0-4e28-9dd5-47d3e9ce37d0.png">
 
 <img width="500" alt="Screen Shot 2022-10-03 at 5 25 24 PM" src="https://user-images.githubusercontent.com/104730743/193692130-3ff2fac6-291a-4b78-aa0c-7ea4192f2ad7.png">
