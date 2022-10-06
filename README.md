@@ -61,16 +61,16 @@ Node: 16.17.1
 PostgreSQL: 12.12
 
 # Configuration:
-# Install packages:
+### Install packages:
 ######
 bundle install
 ######
 npm install --prefix client
 ######
-Database creation & initialization:
+### Database creation & initialization:
 ######
 rails db:create db:migrate
-## How to run the test suite:
+### How to run the test suite:
 ######
 rails s
 ######
