@@ -33,7 +33,7 @@ When a user clicks on a product, it will navigate them to the Individual Product
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 23 46 PM" src="https://user-images.githubusercontent.com/104730743/193693015-f1e7b495-3a96-4f94-b960-481ef83bbc20.png">
 
-Cart Items are stored in local storage. This way, users can view their cart even after they close their browser. Users can also remove individual items or remove all items from cart. If there are no items in the cart, it will state that. If there are items in the cart and the user is not logged in, it will prompt the user to log in. If the user is logged in, they can check out.     
+Cart Items are stored in local storage. This way, users can view their cart even after they close their browser. Users can also remove individual items or remove all items from cart. If there are no items in the cart, it will state that. If there are items in the cart and the user is not logged in, it will prompt the user to log in. If the user is logged in, they can proceed check out.     
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 24 29 PM" src="https://user-images.githubusercontent.com/104730743/193692097-9865d287-941c-4e04-b034-78b1b532c33a.png">
 
