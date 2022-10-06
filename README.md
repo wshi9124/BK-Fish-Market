@@ -70,7 +70,7 @@ npm install --prefix client
 Database creation & initialization:
 ######
 rails db:create db:migrate
-# How to run the test suite:
+## How to run the test suite:
 ######
 rails s
 ######
