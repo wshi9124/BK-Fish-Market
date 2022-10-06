@@ -53,7 +53,7 @@ On the Purchase History page, users can see their past purchases. The purchases 
 
 <img width="500" alt="Screen Shot 2022-10-03 at 5 25 24 PM" src="https://user-images.githubusercontent.com/104730743/193692130-3ff2fac6-291a-4b78-aa0c-7ea4192f2ad7.png">
 
-On the admin interface, users can edit a product's name, image, description and price. They can also search and filter for products. If a product is out of stock, admins can deactivate or activate products. 
+On the admin interface, users can edit a product's name, image, description, and price. They can also search and filter for products. If a product is out of stock, admins can deactivate or activate products. 
 
 <img width="500" alt="Screen Shot 2022-10-03 at 5 28 43 PM" src="https://user-images.githubusercontent.com/104730743/193692142-c027a99d-220a-412d-80e4-348373659f4c.png">
 
