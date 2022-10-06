@@ -48,7 +48,7 @@ On the Checkout page, users can format their address using Google Geocoding API.
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 29 30 PM" src="https://user-images.githubusercontent.com/104730743/193691847-a128d399-4cc0-4e28-9dd5-47d3e9ce37d0.png">
 
-On the Purchase History page, users can see their past purchases. The purchases are sorted with the newest on top. Since the purchase price is a different  column on the table, it will not change even if a admin changes the price after it is purchased.    
+On the Purchase History page, users can see their past purchases. The purchases are sorted with the newest on top. Since the purchase price is on a different column on another table, it will not change even if an admin changes the product price after it is purchased. If a user decides to buy again and an admin deactivates the product, the product will display "Out of Stock" on the individual product page.    
 
 <img width="500" alt="Screen Shot 2022-10-03 at 5 25 24 PM" src="https://user-images.githubusercontent.com/104730743/193692130-3ff2fac6-291a-4b78-aa0c-7ea4192f2ad7.png">
 
