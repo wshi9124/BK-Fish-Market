@@ -57,7 +57,7 @@ On the admin interface, users can edit a product's name, image, description, and
 
 <img width="500" alt="Screen Shot 2022-10-03 at 5 28 43 PM" src="https://user-images.githubusercontent.com/104730743/193692142-c027a99d-220a-412d-80e4-348373659f4c.png">
 
-Admins can also add new products for sale. If a new product is sucessfully made, admins will be navigated to the Admin home page. 
+Admins can also add new products for sale. If a new product is successfully created, admins will be navigated to the Admin home page. 
 
 <img width="500" alt="Screen Shot 2022-10-03 at 5 29 01 PM" src="https://user-images.githubusercontent.com/104730743/193692158-03dc971c-dfee-411f-93b0-b5a87fe6ff9a.png">
 
