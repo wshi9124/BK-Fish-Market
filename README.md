@@ -29,7 +29,7 @@ The Products page displays all the active products that users can purchase. User
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 22 50 PM" src="https://user-images.githubusercontent.com/104730743/193691593-3ad4c934-dd10-4930-a3b5-add8356005a5.png">
 
-When a user clicks on a product, it will navigate them to the Individual Product page. There, users can see the product's info, add to cart, and view reviews for that product. The counter inside the add to cart field will not accept less than 1 or more than 10 items. Users can only write a review if they are logged in and have not previously written a review for that product. If a user fails to meet those conditions, a error message will appear. 
+When a user clicks on a product, it will navigate them to the Individual Product page. There, users can see the product's info, add to cart, and view reviews for that product. The counter inside the add to cart field will not accept less than 1 or more than 10 items. Users can only write a review if they are logged in and have not previously written a review for that product. If a user fails to meet those conditions, an error message will appear. 
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 23 46 PM" src="https://user-images.githubusercontent.com/104730743/193693015-f1e7b495-3a96-4f94-b960-481ef83bbc20.png">
 
@@ -37,15 +37,15 @@ Cart Items are stored in local storage. This way, users can view their cart even
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 24 29 PM" src="https://user-images.githubusercontent.com/104730743/193692097-9865d287-941c-4e04-b034-78b1b532c33a.png">
 
-If a invalid username and password combination is typed in, a error message will appear and the inputs will clear. If users log in as a user, they will be taken to the home page. If users log in as a Admin, they will be taken to the admin interface. 
+If an invalid username and password combination is typed in, an error message will appear and the inputs will clear. If users log in as a user, they will be taken to the home page. If users log in as a Admin, they will be taken to the admin interface. 
 
 <img width="500" alt="Screen Shot 2022-10-05 at 5 42 14 PM" src="https://user-images.githubusercontent.com/104730743/194169519-5210c46e-5561-4899-ae64-053c0d79cb10.png">
 
-Users can choose to make either a regular account or an admin account. Users need to pass a number of validations or else a error message will appear. Once an account is made, a welcome email will be sent and the user will be navigated to the appropriate page. 
+Users can choose to make either a regular account or an admin account. Users need to pass a number of validations or else an error message will appear. Once an account is made, a welcome email will be sent and the user will be navigated to the appropriate page. 
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 27 06 PM" src="https://user-images.githubusercontent.com/104730743/193694869-401544a9-26bf-40c3-9f15-f453c99ad7c1.png">
 
-On the Checkout page, users can format their address using Google Geocoding API. This is done by displaying the first result when fetching from the API. The map will also pan to the location that is formatted. If there is no result, a error message will appear. Users can also input the discount code found on the home page for free shipping. Once a user checks out, they will be navigated to the Purchase History page.  
+On the Checkout page, users can format their address using Google Geocoding API. This is done by displaying the first result when fetching from the API. The map will also pan to the location that is formatted. If there is no result, an error message will appear. Users can also input the discount code found on the home page for free shipping. Once a user checks out, they will be navigated to the Purchase History page.  
 
 <img width="500" alt="Screen Shot 2022-10-03 at 3 29 30 PM" src="https://user-images.githubusercontent.com/104730743/193691847-a128d399-4cc0-4e28-9dd5-47d3e9ce37d0.png">
 
