@@ -17,7 +17,7 @@ This project uses sessions to authenticate users and Bcrypt to encrypt passwords
 There are separate protected routes (private routes) for the user routes and admin routes.  
 
 # Tables 
-<img width="1146" alt="Screen Shot 2022-10-17 at 2 34 38 PM" src="https://user-images.githubusercontent.com/104730743/196256131-07aa709c-9e97-4882-b3ac-4af0a3ebec6f.png">
+<img width="600" alt="Screen Shot 2022-10-17 at 2 34 38 PM" src="https://user-images.githubusercontent.com/104730743/196256131-07aa709c-9e97-4882-b3ac-4af0a3ebec6f.png">
 
 # Features 
 ######
