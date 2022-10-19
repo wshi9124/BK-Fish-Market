@@ -8,7 +8,7 @@ BK Fish Market is an E-Commerce site based on the needs and demands of a real cl
 ######
 Frontend: TypeScript, React, JavaScript, Tailwind CSS, Local Storage (to store cart items)
 ######
-Backend: Ruby on Rails, Active Storage (to store product images), Action Mailer (to send out greeting emails), Bcrypt (to salt and hash password), Active Records Validations
+Backend: Ruby on Rails, PostgreSQL, Active Storage (to store product images), Action Mailer (to send out greeting emails), Bcrypt (to salt and hash password), Active Records Validations
 ######
 Other: Google Maps API, Google Geocoding API, Amazon Web Services (EC2)
 
