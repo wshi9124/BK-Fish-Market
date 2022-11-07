@@ -16,9 +16,6 @@ Other: Google Maps API, Google Geocoding API, Amazon Web Services (EC2)
 This project uses sessions to authenticate users and Bcrypt to encrypt passwords. 
 There are separate protected routes (private routes) for the user routes and admin routes.  
 
-# Tables 
-<img width="600" alt="Screen Shot 2022-10-17 at 2 34 38 PM" src="https://user-images.githubusercontent.com/104730743/196256131-07aa709c-9e97-4882-b3ac-4af0a3ebec6f.png">
-
 # Features 
 ######
 When a user first enters the site, the Rails backend will check if there is a session. If there is, it will automatically log the user in and navigate the user to the appropriate route. 
@@ -70,6 +67,9 @@ Admins can also add new products for sale. If a new product is successfully crea
 This is an example of the Individual Product page if the product is deactivated and a user tries to buy again.
 
 <img width="500" alt="Screen Shot 2022-10-03 at 5 52 07 PM" src="https://user-images.githubusercontent.com/104730743/193692883-d2d44252-942e-4c76-b677-ae993fba9287.png">
+
+# Tables 
+<img width="600" alt="Screen Shot 2022-10-17 at 2 34 38 PM" src="https://user-images.githubusercontent.com/104730743/196256131-07aa709c-9e97-4882-b3ac-4af0a3ebec6f.png">
 
 # System dependencies
 ######
